@@ -1,6 +1,6 @@
 {
   "name": "echarts-tsx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The simplest React wrapper for Apache ECharts with Hooks and TypeScript.",
   "main": "index.tsx",
   "scripts": {

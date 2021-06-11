@@ -17,7 +17,16 @@ function EchartsCore(
   props: Props & { echarts: any },
   ref: Ref<{ echart: ECharts | null }>,
 ) {
-  const { echarts, option, style = {}, resize = true, ...restProps } = props;
+  const {
+    echarts,
+    option,
+    style = {},
+    resize = true,
+    notMerge = false,
+    lazyUpdate = false,
+    silent = false,
+    ...restProps
+  } = props;
 
   const echart = useRef<ECharts | null>(null);
   const echartDOM = useRef<HTMLDivElement>(null);
@@ -41,13 +50,18 @@ function EchartsCore(
 
   useLayoutEffect(() => {
     echart.current = echarts.init(echartDOM.current);
+
+    return () => {
+      echart.current?.dispose();
+      echart.current = null;
+    };
   }, []);
 
   useEffect(() => {
     if (option && echart.current) {
-      echart.current.setOption(option);
+      echart.current.setOption(option, { notMerge, lazyUpdate, silent });
     }
-  }, [option]);
+  }, [option, notMerge, lazyUpdate, silent]);
 
   useEffect(() => {
     if (resize) {
