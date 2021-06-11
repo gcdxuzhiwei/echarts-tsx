@@ -8,8 +8,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   silent?: boolean;
 }
 
-interface chartRef {
+interface ChartRef {
   echart: ECharts;
 }
 
-export type { chartRef, ECharts, EChartOption, Props };
+export type { ChartRef, ECharts, EChartOption, Props };

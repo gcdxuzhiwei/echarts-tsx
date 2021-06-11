@@ -8,10 +8,10 @@ import React, {
 import * as echarts from 'echarts/lib/echarts';
 import EchartsCore from './core';
 
-import { Props, chartRef } from './types';
+import { Props, ChartRef } from './types';
 
 function Echarts(props: Props, ref: Ref<unknown> | undefined) {
-  const coreDOM = useRef<chartRef>(null);
+  const coreDOM = useRef<ChartRef>(null);
 
   useImperativeHandle(ref, () => ({
     echart: coreDOM.current?.echart,
@@ -21,4 +21,4 @@ function Echarts(props: Props, ref: Ref<unknown> | undefined) {
 }
 
 export default memo(forwardRef(Echarts));
-export type { chartRef, ECharts, EChartOption } from './types';
+export type { ChartRef, ECharts, EChartOption } from './types';

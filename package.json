@@ -1,11 +1,23 @@
 {
   "name": "echarts-tsx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The simplest React wrapper for Apache ECharts with Hooks and TypeScript.",
   "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react",
+    "component",
+    "echarts-react",
+    "echarts",
+    "react-echarts",
+    "chart",
+    "charts",
+    "hooks",
+    "react-component",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gcdxuzhiwei/echarts-tsx.git"
